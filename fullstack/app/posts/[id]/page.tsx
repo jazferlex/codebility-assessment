@@ -15,7 +15,7 @@ export default async function PostPage({ params }: Props) {
       <main className="container">
         <p>Post not found.</p>
         <Link className="back" href="/">
-          ← back
+          back
         </Link>
       </main>
     );
@@ -24,7 +24,7 @@ export default async function PostPage({ params }: Props) {
   return (
     <main className="container">
       <Link className="back" href="/">
-        ← back
+        back
       </Link>
 
       <article className="post">

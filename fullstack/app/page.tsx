@@ -19,7 +19,7 @@ export default function HomePage() {
             <p className="excerpt">{post.excerpt}</p>
 
             <Link className="link" href={`/posts/${post.id}`}>
-              read more →
+              read more
             </Link>
           </article>
         ))}
