@@ -1,14 +1,20 @@
 import Link from "next/link";
 import { posts } from "@/data/posts";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function HomePage() {
   const sorted = [...posts].sort((a, b) => (a.date < b.date ? 1 : -1));
 
   return (
     <main className="container">
-      <header className="header">
-        <h1>tiny blog</h1>
-        <p>because every assessment needs a blog, apparently</p>
+      <header className="header flex justify-between items-center">
+        <div>
+          <h1>tiny blog</h1>
+          <p>because every assessment needs a blog</p>
+        </div>
+        <div>
+          <ThemeToggle />
+        </div>
       </header>
 
       <section className="grid">

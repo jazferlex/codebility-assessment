@@ -7,6 +7,16 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
+const themeInitScript = `
+(() => {
+  try {
+    const stored = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const theme = stored || (prefersDark ? "dark" : "light");
+    document.documentElement.dataset.theme = theme;
+  } catch (_) {}
+})();
+`;
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
@@ -24,6 +34,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <header>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </header>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -32,3 +45,8 @@ export default function RootLayout({
     </html>
   );
 }
+
+import "./globals.css";
+
+
+
