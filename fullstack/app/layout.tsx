@@ -34,12 +34,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <header>
-        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
-      </header>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <header>
+          <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+        </header>
         {children}
       </body>
     </html>
